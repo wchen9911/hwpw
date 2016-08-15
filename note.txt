@@ -1,0 +1,101 @@
+Test:
+
+>mongod.exe --dbpath "c:\data"
+
+//Team Data
+
+
+db.nbaTeams.insert({ name : '老鹰', city : '亚特兰大', logo: 'nbalogos/ATL_logo.svg'});
+db.nbaTeams.insert({ name : '黄蜂', city : '夏洛特', logo: 'nbalogos/CHA.svg'});
+db.nbaTeams.insert({ name : '热火', city : '迈阿密', logo: 'nbalogos/MIA.svg'});
+db.nbaTeams.insert({ name : '魔术', city : '奥兰多', logo: 'nbalogos/ORL.svg'});
+db.nbaTeams.insert({ name : '奇才', city : '华盛顿', logo: 'nbalogos/WAS.svg'});
+db.nbaTeams.insert({ name : '公牛', city : '芝加哥', logo: 'nbalogos/CHI.svg'});
+db.nbaTeams.insert({ name : '骑士', city : '克利夫兰', logo: 'nbalogos/cavaliers_Clogo.svg'});
+db.nbaTeams.insert({ name : '活塞', city : '底特律', logo: 'nbalogos/DET.svg'});
+db.nbaTeams.insert({ name : '步行者', city : '印第安纳', logo: 'nbalogos/IND.svg'});
+db.nbaTeams.insert({ name : '雄鹿', city : '密尔沃基', logo: 'nbalogos/MIL.svg'});
+db.nbaTeams.insert({ name : '凯尔特人', city : '波士顿', logo: 'nbalogos/BOS.svg'});
+db.nbaTeams.insert({ name : '篮网', city : '布鲁克林', logo: 'nbalogos/BKN.svg'});
+db.nbaTeams.insert({ name : '尼克斯', city : '纽约', logo: 'nbalogos/NYK.svg'});
+db.nbaTeams.insert({ name : '76人', city : '费城', logo: 'nbalogos/PHI_logo.svg'});
+db.nbaTeams.insert({ name : '猛龙', city : '多伦多', logo: 'nbalogos/TOR.svg'});
+db.nbaTeams.insert({ name : '勇士', city : '金州', logo: 'nbalogos/GSW.svg'});
+db.nbaTeams.insert({ name : '快船', city : '洛杉矶', logo: 'nbalogos/LAC.svg'});
+db.nbaTeams.insert({ name : '湖人', city : '洛杉矶', logo: 'nbalogos/LAL.svg'});
+db.nbaTeams.insert({ name : '太阳', city : '菲尼克斯', logo: 'nbalogos/PHX_logo.svg'});
+db.nbaTeams.insert({ name : '国王', city : '萨克拉门托', logo: 'nbalogos/SAC.svg'});
+db.nbaTeams.insert({ name : '掘金', city : '丹佛', logo: 'nbalogos/DEN.svg'});
+db.nbaTeams.insert({ name : '森林狼', city : '明尼苏达', logo: 'nbalogos/MIN.svg'});
+db.nbaTeams.insert({ name : '雷霆', city : '奥克拉荷马城', logo: 'nbalogos/OKC.svg'});
+db.nbaTeams.insert({ name : '开拓者', city : '波特兰', logo: 'nbalogos/POR.svg'});
+db.nbaTeams.insert({ name : '爵士', city : '犹他', logo: 'nbalogos/UTA.svg'});
+db.nbaTeams.insert({ name : '小牛', city : '达拉斯', logo: 'nbalogos/DAL.svg'});
+db.nbaTeams.insert({ name : '火箭', city : '休斯顿', logo: 'nbalogos/HOU.svg'});
+db.nbaTeams.insert({ name : '灰熊', city : '孟菲斯', logo: 'nbalogos/MEM.svg'});
+db.nbaTeams.insert({ name : '鹈鹕', city : '新奥尔良', logo: 'nbalogos/NOP.svg'});
+db.nbaTeams.insert({ name : '马刺', city : '圣安东尼奥', logo: 'nbalogos/Spur_tkts.svg'});
+
+
+//query
+db.getCollection('alcatrazTicket').find({ }).sort( { date: 1 } )
+
+
+//
+//type : 1, final price
+//type : 2, discount
+//group : for ticket
+db.promotion.insert({ name: '恶魔岛票(白天)(成人)', type: 1, group: 1, price : 258});
+db.promotion.insert({ name: '恶魔岛票(白天)(青年)', type: 1, group: 1, price : 258});
+db.promotion.insert({ name: '恶魔岛票(白天)(儿童)', type: 1, group: 1, price : 160});
+db.promotion.insert({ name: '恶魔岛票(白天)(老年)', type: 1, group: 1, price : 246});
+db.promotion.insert({ name: '恶魔岛票(白天)(幼儿)', type: 1, group: 1, price : 0});
+
+db.promotion.insert({ name: '恶魔岛票(晚间)(成人)', type: 1, group: 2, price : 312});
+db.promotion.insert({ name: '恶魔岛票(晚间)(青年)', type: 1, group: 2, price : 312});
+db.promotion.insert({ name: '恶魔岛票(晚间)(儿童)', type: 1, group: 2, price : 188});
+db.promotion.insert({ name: '恶魔岛票(晚间)(老年)', type: 1, group: 2, price : 290});
+db.promotion.insert({ name: '恶魔岛票(晚间)(幼儿)', type: 1, group: 2, price : 0});
+
+
+db.promotion.insert({ name: '恶魔岛与天使岛套票(成人)', type: 1, group: 3, price : 522});
+db.promotion.insert({ name: '恶魔岛与天使岛套票(青年)', type: 1, group: 3, price : 522});
+db.promotion.insert({ name: '恶魔岛与天使岛套票(儿童)', type: 1, group: 3, price : 353});
+db.promotion.insert({ name: '恶魔岛与天使岛套票(老年)', type: 1, group: 3, price : 510});
+db.promotion.insert({ name: '恶魔岛与天使岛套票(幼儿)', type: 1, group: 3, price : 0});
+
+
+
+API URL
+
+Consumer Key	ucde4TspTbX8MvznsGBUCrjf7kiay8I6
+ 
+"use strict";
+var page = require('webpage').create();
+console.log('The default user agent is ' + page.settings.userAgent);
+page.settings.userAgent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.137 Safari/4E423F';
+page.settings.javascriptEnabled = true;
+page.settings.localToRemoteUrlAccessEnabled = true;
+page.settings.XSSAuditingEnabled = true;
+
+var url = "http://www.alcatraztickets.com/";
+
+url = "http://www.alcatrazcruises.com/";
+page.open( url , function (status) {
+    if (status !== 'success') {
+        console.log('Unable to access network');
+    } else {
+        var ua = page.evaluate(function () {
+            return document.getElementById('myagent').innerText;
+        });
+        console.log(ua);
+
+        console.log(page.content);
+    }
+    phantom.exit();
+});
+
+
+ 
+
+ 
