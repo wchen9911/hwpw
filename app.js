@@ -5,14 +5,27 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var monk = require('monk');
+var mongoose = require('mongoose');
 
 //mongodb
 var db =  monk('localhost:27017/test');
+
+//mongoose
+mongoose.connect('mongodb://localhost/test');
+
+//connection call back
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  // we're connected!
+  console.log("mongoose connected!!");
+});
 
 var nba = require('./routes/nba');
 var alcatrazIsland = require('./routes/alcatrazIsland');
 var promotions = require('./routes/promotions');
 var orders = require('./routes/orders');
+var performers = require('./routes/performers');
 
 var app = express();
 
@@ -41,6 +54,7 @@ app.use('/nba', nba);
 app.use('/alcatraz/tickets', alcatrazIsland);
 app.use('/promotions', promotions);
 app.use('/orders', orders);
+app.use('/performers', performers);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
