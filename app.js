@@ -21,12 +21,6 @@ db.once('open', function() {
   console.log("mongoose connected!!");
 });
 
-var nba = require('./routes/nba');
-var alcatrazIsland = require('./routes/alcatrazIsland');
-var promotions = require('./routes/promotions');
-var orders = require('./routes/orders');
-var performers = require('./routes/performers');
-
 var app = express();
 
 // view engine setup
@@ -50,11 +44,12 @@ app.use(function(req,res,next){
     next();
 });
 
-app.use('/nba', nba);
-app.use('/alcatraz/tickets', alcatrazIsland);
-app.use('/promotions', promotions);
-app.use('/orders', orders);
-app.use('/performers', performers);
+app.use('/alcatraz/tickets', require('./routes/alcatrazIsland'));
+app.use('/nba', require('./routes/nba'));
+app.use('/orders', require('./routes/orders'));
+app.use('/performances', require('./routes/performances'));
+app.use('/performers', require('./routes/performers'));
+app.use('/promotions', require('./routes/promotions'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

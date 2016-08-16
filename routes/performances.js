@@ -7,7 +7,7 @@ var performanceSchema = mongoose.Schema({
   name : String
 });
 
-var Performance = mongoose.model("Performanec", performanceSchema);
+var Performance = mongoose.model("Performance", performanceSchema);
 
 // Gets all places
 router.get('/', function(req, res, next) {
