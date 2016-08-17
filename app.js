@@ -8,7 +8,7 @@ var monk = require('monk');
 var mongoose = require('mongoose');
 
 //mongodb
-var db =  monk('localhost:27017/test');
+//var db =  monk('localhost:27017/test');
 
 //mongoose
 mongoose.connect('mongodb://localhost/test');

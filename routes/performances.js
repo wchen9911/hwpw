@@ -4,25 +4,40 @@ var mongoose = require('mongoose');
 var router = express.Router();
 
 var performanceSchema = mongoose.Schema({
-  name : String
+  name: String,
+  performer: [String],
+  location: String,
+  date: Date
 });
 
-var Performance = mongoose.model("Performance", performanceSchema);
+var Performance = mongoose.model("performance", performanceSchema);
 
 // Gets all places
 router.get('/', function(req, res, next) {
+  Performance.find(function(err, performance) {
+    if (err) return console.error(err);
+    res.json(performance);
+  });
+});
+
+// Gets a place
+router.get('/:performanceId', function(req, res, next) {
+  var performanceId = req.params.performanceId;
+  Performance.find({_id: performanceId},function(err, performance) {
+    if (err) return console.error(err);
+    res.json(performance);
+  });
+});
+
+// Gets a perfomer's performance
+router.get('/performer/:performerId', function(req, res, next) {
+  var performerId = req.params.performerId;
  
-  Performance.find(function(err, performances) {
+  Performance.find({performer: performerId}, function(err, performances) {
     if (err) return console.error(err);
     res.json(performances);
   });
 
-});
-
-// Gets a place
-router.get('/:performance', function(req, res, next) {
-  var performance = req.params.performance;
-  res.json({performance: performance});
 });
 
 module.exports = router;
