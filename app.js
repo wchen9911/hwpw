@@ -45,11 +45,13 @@ app.use(function(req,res,next){
 });
 
 app.use('/alcatraz/tickets', require('./routes/alcatrazIsland'));
+app.use('/locations', require('./routes/locations'));
 app.use('/nba', require('./routes/nba'));
 app.use('/orders', require('./routes/orders'));
 app.use('/performances', require('./routes/performances'));
 app.use('/performers', require('./routes/performers'));
 app.use('/promotions', require('./routes/promotions'));
+app.use('/tickets', require('./routes/tickets'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

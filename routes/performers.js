@@ -5,8 +5,9 @@ var router = express.Router();
 
 
 var performerSchema = mongoose.Schema({
-  name: String,
-  type: Number  //1: fix, 2: recurring
+  name: String, // Name
+  ename: String, // English Name
+  type: Number //1: fix, 2: recurring
 });
 
 var Performer = mongoose.model("Performer", performerSchema);

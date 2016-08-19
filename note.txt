@@ -103,6 +103,9 @@ db.performers.insert({name: "CA", type: 2});
 db.performances.insert({name: 'P1', performer: '57b3c9d481d7b1b5cb4b24c9', date: '2016-10-01'});
 db.performances.insert({name: 'P2', performer: '57b3c9d481d7b1b5cb4b24c9', date: '2016-10-01'});
 db.performances.insert({name: 'P4', performer: ['0','57b3c9d481d7b1b5cb4b24c9','1','2'], date: '2016-10-01'});
+
+db.tickets.insert({name:"11", performance:"1"});
+db.tickets.insert({name:"22", performance:"1"});
  
 
 Mongoose automatically looks for the plural version of your model name.
