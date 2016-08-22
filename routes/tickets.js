@@ -1,18 +1,8 @@
 var express = require('express');
-var mongoose = require('mongoose');
+var models = require('../model/models')
 
 var router = express.Router();
-
-
-var ticketSchema = mongoose.Schema({
-  name: String,
-  price: Number,
-  inventory: Number,
-  minpackage: {type: Number, default: 1},
-  performance: String
-});
-
-var Ticket = mongoose.model("Ticket", ticketSchema);
+var Ticket = models.Ticket;
 
 // Gets all tickets
 router.get('/', function(req, res, next) {

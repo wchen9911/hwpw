@@ -96,16 +96,21 @@ page.open( url , function (status) {
 });
 
 
-db.performers.insert({name: "GS", type: 1});
-db.performers.insert({name: "LA", type: 1});
-db.performers.insert({name: "CA", type: 2});
+db.performers.insert({name: "GS", type: 1, _id: ObjectId('57b3c9d481d7b1b5cb4b24c9')} );
+db.performers.insert({name: "LA", type: 1, _id: ObjectId('57ba06f107f2889466f7a086')} );
+db.performers.insert({name: "CA", type: 2, _id: ObjectId('57ba071307f2889466f7a087')} );
 
-db.performances.insert({name: 'P1', performer: '57b3c9d481d7b1b5cb4b24c9', date: '2016-10-01'});
-db.performances.insert({name: 'P2', performer: '57b3c9d481d7b1b5cb4b24c9', date: '2016-10-01'});
-db.performances.insert({name: 'P4', performer: ['0','57b3c9d481d7b1b5cb4b24c9','1','2'], date: '2016-10-01'});
+db.locations.insert({name: 'Oracle Arena', city: 'Oakland', state:'CA', _id: ObjectId('57ba081107f2889466f7a088'), map_img: 'assets/map/warriors.jpg', map_json: 'assets/map/warriors.json'});
+db.locations.insert({name: 'T-Mobile Arena', city: 'Las Vegas', state:'NV', _id: ObjectId('57ba081207f2889466f7a089'), map_img: 'assets/map/warriors.jpg', map_json: 'assets/map/warriors.json'});
 
-db.tickets.insert({name:"11", performance:"1"});
-db.tickets.insert({name:"22", performance:"1"});
+db.performances.insert({name: 'LA at GS Preseason', location: '57ba081107f2889466f7a088', performer: ['57b3c9d481d7b1b5cb4b24c9', '57ba06f107f2889466f7a086'], date: '2016-10-01 19:00', _id: ObjectId('57ba090407f2889466f7a08a')});
+db.performances.insert({name: 'CA at GS Preseason', location: '57ba081207f2889466f7a089', performer: ['57b3c9d481d7b1b5cb4b24c9', '57ba071307f2889466f7a087'], date: '2016-10-02 19:00', _id: ObjectId('57ba090607f2889466f7a08b')});
+
+db.tickets.insert({name:"11", performance:'57ba090407f2889466f7a08a', price: 500});
+db.tickets.insert({name:"22", performance:'57ba090407f2889466f7a08a', price: 200});
  
 
 Mongoose automatically looks for the plural version of your model name.
+
+
+db.locations.update({id: 'Oracle Arena'},{map_img: 'assets/map/warriors.jpg', map_json: 'assets/map/warriors.jpg'})
