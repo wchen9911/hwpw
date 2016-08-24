@@ -43,10 +43,14 @@ var Performance = mongoose.model("performance", performanceSchema);
  
 var ticketSchema = mongoose.Schema({
   name: String,
+  type: Number,
+  performance: String,
+  level: String,
+  section: String,
+  seat: [String],
+  pack: [Number],
   price: Number,
-  inventory: Number,
-  minpackage: {type: Number, default: 1},
-  performance: String
+  inventory: Number
 });
 var Ticket = mongoose.model("Ticket", ticketSchema);
 

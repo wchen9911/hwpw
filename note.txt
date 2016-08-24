@@ -106,8 +106,8 @@ db.locations.insert({name: 'T-Mobile Arena', city: 'Las Vegas', state:'NV', _id:
 db.performances.insert({name: 'LA at GS Preseason', location: '57ba081107f2889466f7a088', performer: ['57b3c9d481d7b1b5cb4b24c9', '57ba06f107f2889466f7a086'], date: '2016-10-01 19:00', _id: ObjectId('57ba090407f2889466f7a08a')});
 db.performances.insert({name: 'CA at GS Preseason', location: '57ba081207f2889466f7a089', performer: ['57b3c9d481d7b1b5cb4b24c9', '57ba071307f2889466f7a087'], date: '2016-10-02 19:00', _id: ObjectId('57ba090607f2889466f7a08b')});
 
-db.tickets.insert({name:"11", performance:'57ba090407f2889466f7a08a', price: 500});
-db.tickets.insert({name:"22", performance:'57ba090407f2889466f7a08a', price: 200});
+db.tickets.insert({name:"11", performance:'57ba090407f2889466f7a08a', price: 500, type: 1, level: "Upper", section: "A", row: "12", seat: [1,2,3,4], pack: [1,2]});
+db.tickets.insert({name:"22", performance:'57ba090407f2889466f7a08a', price: 200, type: 1, level: "Upper", section: "A", row: "12", seat: [2,3,4], pack: [1]});
  
 
 Mongoose automatically looks for the plural version of your model name.

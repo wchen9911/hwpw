@@ -6,12 +6,19 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var monk = require('monk');
 var mongoose = require('mongoose');
+var webconfig = require('./webconfig')
 
+console.log(webconfig.mongodb);
 //mongodb
 //var db =  monk('localhost:27017/test');
 
 //mongoose
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://'+
+  webconfig.mongodb.username+':'+
+  webconfig.mongodb.password+'@'+
+  webconfig.mongodb.host+':'+
+  webconfig.mongodb.port+'/'+
+  webconfig.mongodb.database);
 
 //connection call back
 var db = mongoose.connection;
