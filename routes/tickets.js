@@ -3,6 +3,8 @@ var models = require('../model/models')
 
 var router = express.Router();
 var Ticket = models.Ticket;
+var Performance = models.Performance;
+
 
 // Gets all tickets
 router.get('/', function(req, res, next) {
@@ -17,7 +19,22 @@ router.get('/', function(req, res, next) {
 // Gets a ticket
 router.get('/:ticketId', function(req, res, next) {
   var ticketId = req.params.ticketId;
-  res.json({ticketId: ticketId});
+  Ticket.findOne({_id: ticketId}, function(err, ticket) {
+    if (err) {
+      res.status(404).send("Not Found!").end();
+      return console.error(err);
+    }
+    ticket = JSON.parse(JSON.stringify(ticket));
+    var p = Performance.findOne({_id: ticket.performance}, function(err, performance) {
+      if(err) return console.error(err);
+      ticket.performanceInfo = performance;
+    });
+    p.then(function(){
+      res.json(ticket);
+    },function(){
+      res.json({});
+    });
+  });
 });
 
 // Gets a performance's tickets

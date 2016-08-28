@@ -4,21 +4,22 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var monk = require('monk');
 var mongoose = require('mongoose');
 var webconfig = require('./webconfig')
 
 console.log(webconfig.mongodb);
 //mongodb
-//var db =  monk('localhost:27017/test');
-
+var mongodbConnectURL = 'mongodb://';
+if (webconfig.mongodb.username && webconfig.mongodb.password) {
+  mongodbConnectURL += webconfig.mongodb.username;
+  mongodbConnectURL += ':';
+  mongodbConnectURL += webconfig.mongodb.password + '@';
+}
+mongodbConnectURL += webconfig.mongodb.host+':';
+mongodbConnectURL += webconfig.mongodb.port+'/';
+mongodbConnectURL += webconfig.mongodb.database;
 //mongoose
-mongoose.connect('mongodb://'+
-  webconfig.mongodb.username+':'+
-  webconfig.mongodb.password+'@'+
-  webconfig.mongodb.host+':'+
-  webconfig.mongodb.port+'/'+
-  webconfig.mongodb.database);
+mongoose.connect(mongodbConnectURL);
 
 //connection call back
 var db = mongoose.connection;
