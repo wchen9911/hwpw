@@ -54,6 +54,7 @@ app.use(function(req,res,next){
 
 app.use('/alcatraz/tickets', require('./routes/alcatrazIsland'));
 app.use('/locations', require('./routes/locations'));
+app.use('/feedbacks', require('./routes/feedbacks'));
 app.use('/nba', require('./routes/nba'));
 app.use('/orders', require('./routes/orders'));
 app.use('/performances', require('./routes/performances'));

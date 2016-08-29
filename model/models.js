@@ -39,8 +39,7 @@ var Performance = mongoose.model("performance", performanceSchema);
 
 /**
  * Tickets
- */
- 
+ */ 
 var ticketSchema = mongoose.Schema({
   name: String,
   type: Number,
@@ -54,9 +53,21 @@ var ticketSchema = mongoose.Schema({
 });
 var Ticket = mongoose.model("Ticket", ticketSchema);
 
+
+/**
+ * Feedbacks
+ */
+var feedbackSchema = mongoose.Schema({
+  contact: String,
+  content: String
+});
+var Feedback = mongoose.model("Feedback",feedbackSchema);
+
+
 module.exports = {
 	Location: Location,
 	Performance: Performance,
 //	Performer: Performer,
-	Ticket: Ticket
+	Ticket: Ticket,
+  Feedback: Feedback
 };
