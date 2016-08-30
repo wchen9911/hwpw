@@ -3,38 +3,36 @@ Test:
 >mongod.exe --dbpath "c:\data"
 
 //Team Data
-
-
-db.nbaTeams.insert({ name : '老鹰', city : '亚特兰大', logo: 'nbalogos/ATL_logo.svg'});
-db.nbaTeams.insert({ name : '黄蜂', city : '夏洛特', logo: 'nbalogos/CHA.svg'});
-db.nbaTeams.insert({ name : '热火', city : '迈阿密', logo: 'nbalogos/MIA.svg'});
-db.nbaTeams.insert({ name : '魔术', city : '奥兰多', logo: 'nbalogos/ORL.svg'});
-db.nbaTeams.insert({ name : '奇才', city : '华盛顿', logo: 'nbalogos/WAS.svg'});
-db.nbaTeams.insert({ name : '公牛', city : '芝加哥', logo: 'nbalogos/CHI.svg'});
-db.nbaTeams.insert({ name : '骑士', city : '克利夫兰', logo: 'nbalogos/cavaliers_Clogo.svg'});
-db.nbaTeams.insert({ name : '活塞', city : '底特律', logo: 'nbalogos/DET.svg'});
-db.nbaTeams.insert({ name : '步行者', city : '印第安纳', logo: 'nbalogos/IND.svg'});
-db.nbaTeams.insert({ name : '雄鹿', city : '密尔沃基', logo: 'nbalogos/MIL.svg'});
-db.nbaTeams.insert({ name : '凯尔特人', city : '波士顿', logo: 'nbalogos/BOS.svg'});
-db.nbaTeams.insert({ name : '篮网', city : '布鲁克林', logo: 'nbalogos/BKN.svg'});
-db.nbaTeams.insert({ name : '尼克斯', city : '纽约', logo: 'nbalogos/NYK.svg'});
-db.nbaTeams.insert({ name : '76人', city : '费城', logo: 'nbalogos/PHI_logo.svg'});
-db.nbaTeams.insert({ name : '猛龙', city : '多伦多', logo: 'nbalogos/TOR.svg'});
-db.nbaTeams.insert({ name : '勇士', city : '金州', logo: 'nbalogos/GSW.svg'});
-db.nbaTeams.insert({ name : '快船', city : '洛杉矶', logo: 'nbalogos/LAC.svg'});
-db.nbaTeams.insert({ name : '湖人', city : '洛杉矶', logo: 'nbalogos/LAL.svg'});
-db.nbaTeams.insert({ name : '太阳', city : '菲尼克斯', logo: 'nbalogos/PHX_logo.svg'});
-db.nbaTeams.insert({ name : '国王', city : '萨克拉门托', logo: 'nbalogos/SAC.svg'});
-db.nbaTeams.insert({ name : '掘金', city : '丹佛', logo: 'nbalogos/DEN.svg'});
-db.nbaTeams.insert({ name : '森林狼', city : '明尼苏达', logo: 'nbalogos/MIN.svg'});
-db.nbaTeams.insert({ name : '雷霆', city : '奥克拉荷马城', logo: 'nbalogos/OKC.svg'});
-db.nbaTeams.insert({ name : '开拓者', city : '波特兰', logo: 'nbalogos/POR.svg'});
-db.nbaTeams.insert({ name : '爵士', city : '犹他', logo: 'nbalogos/UTA.svg'});
-db.nbaTeams.insert({ name : '小牛', city : '达拉斯', logo: 'nbalogos/DAL.svg'});
-db.nbaTeams.insert({ name : '火箭', city : '休斯顿', logo: 'nbalogos/HOU.svg'});
-db.nbaTeams.insert({ name : '灰熊', city : '孟菲斯', logo: 'nbalogos/MEM.svg'});
-db.nbaTeams.insert({ name : '鹈鹕', city : '新奥尔良', logo: 'nbalogos/NOP.svg'});
-db.nbaTeams.insert({ name : '马刺', city : '圣安东尼奥', logo: 'nbalogos/Spur_tkts.svg'});
+db.performers.insert({ name : '老鹰', group: 'NBA', ename: 'Hawks', type: 1, city : '亚特兰大', logo: 'nbalogos/ATL_logo.svg'});
+db.performers.insert({ name : '黄蜂', group: 'NBA', ename: 'Hornets', type: 1, city : '夏洛特', logo: 'nbalogos/CHA.svg'});
+db.performers.insert({ name : '热火', group: 'NBA', ename: 'Heat', type: 1, city : '迈阿密', logo: 'nbalogos/MIA.svg'});
+db.performers.insert({ name : '魔术', group: 'NBA', ename: 'Magic', type: 1, city : '奥兰多', logo: 'nbalogos/ORL.svg'});
+db.performers.insert({ name : '奇才', group: 'NBA', ename: 'Wizards', type: 1, city : '华盛顿', logo: 'nbalogos/WAS.svg'});
+db.performers.insert({ name : '公牛', group: 'NBA', ename: 'Bulls', type: 1, city : '芝加哥', logo: 'nbalogos/CHI.svg'});
+db.performers.insert({ name : '骑士', group: 'NBA', ename: 'Cavaliers', type: 1, city : '克利夫兰', logo: 'nbalogos/cavaliers_Clogo.svg'});
+db.performers.insert({ name : '活塞', group: 'NBA', ename: 'Pistons', type: 1, city : '底特律', logo: 'nbalogos/DET.svg'});
+db.performers.insert({ name : '步行者', group: 'NBA', ename: 'Pacers', type: 1, city : '印第安纳', logo: 'nbalogos/IND.svg'});
+db.performers.insert({ name : '雄鹿', group: 'NBA', ename: 'Bucks', type: 1, city : '密尔沃基', logo: 'nbalogos/MIL.svg'});
+db.performers.insert({ name : '凯尔特人', group: 'NBA', ename: 'Celtics', type: 1, city : '波士顿', logo: 'nbalogos/BOS.svg'});
+db.performers.insert({ name : '篮网', group: 'NBA', ename: 'Nets', type: 1, city : '布鲁克林', logo: 'nbalogos/BKN.svg'});
+db.performers.insert({ name : '尼克斯', group: 'NBA', ename: 'Knicks', type: 1, city : '纽约', logo: 'nbalogos/NYK.svg'});
+db.performers.insert({ name : '76人', group: 'NBA', ename: '76ers', type: 1, city : '费城', logo: 'nbalogos/PHI_logo.svg'});
+db.performers.insert({ name : '猛龙', group: 'NBA', ename: 'Raptors', type: 1, city : '多伦多', logo: 'nbalogos/TOR.svg'});
+db.performers.insert({ name : '勇士', group: 'NBA', ename: 'Warriors', type: 1, city : '金州', logo: 'nbalogos/GSW.svg'});
+db.performers.insert({ name : '快船', group: 'NBA', ename: 'Clippers', type: 1, city : '洛杉矶', logo: 'nbalogos/LAC.svg'});
+db.performers.insert({ name : '湖人', group: 'NBA', ename: 'Lakers', type: 1, city : '洛杉矶', logo: 'nbalogos/LAL.svg'});
+db.performers.insert({ name : '太阳', group: 'NBA', ename: 'Suns', type: 1, city : '菲尼克斯', logo: 'nbalogos/PHX_logo.svg'});
+db.performers.insert({ name : '国王', group: 'NBA', ename: 'Kings', type: 1, city : '萨克拉门托', logo: 'nbalogos/SAC.svg'});
+db.performers.insert({ name : '掘金', group: 'NBA', ename: 'Nuggets', type: 1, city : '丹佛', logo: 'nbalogos/DEN.svg'});
+db.performers.insert({ name : '森林狼', group: 'NBA', ename: 'Timberwolves', type: 1, city : '明尼苏达', logo: 'nbalogos/MIN.svg'});
+db.performers.insert({ name : '雷霆', group: 'NBA', ename: 'Thunder', type: 1, city : '奥克拉荷马城', logo: 'nbalogos/OKC.svg'});
+db.performers.insert({ name : '开拓者', group: 'NBA', ename: 'Trail Blazers', type: 1, city : '波特兰', logo: 'nbalogos/POR.svg'});
+db.performers.insert({ name : '爵士', group: 'NBA', ename: 'Jazz', type: 1, city : '犹他', logo: 'nbalogos/UTA.svg'});
+db.performers.insert({ name : '小牛', group: 'NBA', ename: 'Mavericks', type: 1, city : '达拉斯', logo: 'nbalogos/DAL.svg'});
+db.performers.insert({ name : '火箭', group: 'NBA', ename: 'Rockets', type: 1, city : '休斯顿', logo: 'nbalogos/HOU.svg'});
+db.performers.insert({ name : '灰熊', group: 'NBA', ename: 'Grizzlies', type: 1, city : '孟菲斯', logo: 'nbalogos/MEM.svg'});
+db.performers.insert({ name : '鹈鹕', group: 'NBA', ename: 'Pelicans', type: 1, city : '新奥尔良', logo: 'nbalogos/NOP.svg'});
+db.performers.insert({ name : '马刺', group: 'NBA', ename: 'Spurs', type: 1, city : '圣安东尼奥', logo: 'nbalogos/Spur_tkts.svg'});
 
 
 //query

@@ -4,14 +4,13 @@ var mongoose = require('mongoose');
 /**
  * Performer
  */
- /*
+ 
 var performerSchema = mongoose.Schema({
   name: String, // Name
   ename: String, // English Name
   type: Number //1: fix, 2: recurring
 });
 var Performer = mongoose.model("Performer", performerSchema);
-*/
 
 /**
  * Location
@@ -67,7 +66,7 @@ var Feedback = mongoose.model("Feedback",feedbackSchema);
 module.exports = {
 	Location: Location,
 	Performance: Performance,
-//	Performer: Performer,
+	Performer: Performer,
 	Ticket: Ticket,
   Feedback: Feedback
 };

@@ -1,25 +1,17 @@
 var express = require('express');
-var mongoose = require('mongoose');
+var models = require('../model/models')
 
 var router = express.Router();
 
-
-var performerSchema = mongoose.Schema({
-  name: String, // Name
-  ename: String, // English Name
-  type: Number //1: fix, 2: recurring
-});
-
-var Performer = mongoose.model("Performer", performerSchema);
+var Performer = models.Performer;
 
 // Gets all performers
-router.get('/', function(req, res, next) {
- 
-  Performer.find(function(err, performers) {
+router.get('/group/:group', function(req, res, next) {
+  var group = req.params.group;
+  Performer.find({group: group}, function(err, performers) {
     if (err) return console.error(err);
     res.json(performers);
   });
-
 });
 
 // Gets a performer
