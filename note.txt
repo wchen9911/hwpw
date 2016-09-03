@@ -101,6 +101,11 @@ db.performers.insert({name: "GS", type: 1, _id: ObjectId('57b3c9d481d7b1b5cb4b24
 db.performers.insert({name: "LA", type: 1, _id: ObjectId('57ba06f107f2889466f7a086')} );
 db.performers.insert({name: "CA", type: 2, _id: ObjectId('57ba071307f2889466f7a087')} );
 
+db.performers.insert({ name : '勇士', group: 'NBA', ename: 'Warriors', type: 1, city : '金州', logo: 'nbalogos/GSW.svg', _id: ObjectId('57b3c9d481d7b1b5cb4b24c9')});
+db.performers.insert({ name : '湖人', group: 'NBA', ename: 'Lakers', type: 1, city : '洛杉矶', logo: 'nbalogos/LAL.svg', _id: ObjectId('57ba06f107f2889466f7a086')});
+db.performers.insert({ name : '马刺', group: 'NBA', ename: 'Spurs', type: 1, city : '圣安东尼奥', logo: 'nbalogos/Spur_tkts.svg', _id: ObjectId('57ba071307f2889466f7a087')});
+
+
 db.locations.insert({name: 'Oracle Arena', city: 'Oakland', state:'CA', _id: ObjectId('57ba081107f2889466f7a088'), map_img: 'assets/map/warriors.jpg', map_json: 'assets/map/warriors.json'});
 db.locations.insert({name: 'T-Mobile Arena', city: 'Las Vegas', state:'NV', _id: ObjectId('57ba081207f2889466f7a089'), map_img: 'assets/map/warriors.jpg', map_json: 'assets/map/warriors.json'});
 
