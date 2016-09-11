@@ -34,6 +34,11 @@ db.performers.insert({ name : '灰熊', group: 'NBA', efullname:'Memphis Grizzli
 db.performers.insert({ name : '鹈鹕', group: 'NBA', efullname:'New Orleans Pelicans', tmid:'K8vZ9171oaV', ename: 'Pelicans', type: 1, city : '新奥尔良', logo: 'nbalogos/NOP.svg'});
 db.performers.insert({ name : '马刺', group: 'NBA', efullname:'San Antonio Spurs', tmid:'K8vZ9171ov0', ename: 'Spurs', type: 1, city : '圣安东尼奥', logo: 'nbalogos/Spur_tkts.svg'});
 
+//Locations Data
+db.locations.insert({name: 'Oracle Arena', ename:'' ,tmid:'' , city: 'Oakland', state:'CA', _id: ObjectId('57ba081107f2889466f7a088'), map_img: 'assets/map/warriors.jpg', map_json: 'assets/map/warriors.json'});
+
+
+
 
 //query
 db.getCollection('alcatrazTicket').find({ }).sort( { date: 1 } )

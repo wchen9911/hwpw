@@ -17,9 +17,17 @@ var Performer = mongoose.model("Performer", performerSchema);
  */
 var LocationSchema = mongoose.Schema({
   name: String,
-  map_img: String,
-  map_json: String,
   city: String,
+  state: String,
+  tmid: String,
+  ename: String,
+  ecity: String,
+  estate: String,
+  statecode: String,
+  zip: String,
+  address: String,
+  map_img: String,
+  map_json: String
 });
 var Location = mongoose.model("location", LocationSchema);
 
@@ -28,6 +36,8 @@ var Location = mongoose.model("location", LocationSchema);
  */
  var performanceSchema = mongoose.Schema({
   name: String,
+  ename: String,
+  tmid: String,
   icon: {type: String, default: 'assets/img/default.png'},
   performer: [String],
   location: String,
