@@ -13,3 +13,8 @@ module.exports.tm = {
   consumerKey: 'xxxxxxxx',
   consumerSecret: 'yyyyyyy'
 };
+
+// WebAPP configuration.
+module.exports.webapp = {
+  port: 3000
+}
