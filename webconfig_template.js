@@ -1,5 +1,4 @@
-
-// MongoDB Config
+// MongoDB Config.
 module.exports.mongodb = {
 	username : 'test',
 	password : 'test',
@@ -8,7 +7,7 @@ module.exports.mongodb = {
 	port: 27017
 };
 
-// TM Config
+// TM Config.
 module.exports.tm = {
   consumerKey: 'xxxxxxxx',
   consumerSecret: 'yyyyyyy'
@@ -17,4 +16,9 @@ module.exports.tm = {
 // WebAPP configuration.
 module.exports.webapp = {
   port: 3000
-}
+};
+
+// HTTP Server configuration.
+module.exports.httpConfig = {
+  debug: false
+};

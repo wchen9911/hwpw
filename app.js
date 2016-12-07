@@ -41,7 +41,12 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'frontend/build')));
+
+if (webconfig.httpConfig.debug) {
+  app.use(express.static(path.join(__dirname, 'frontend/build')));
+} else {
+  app.use(express.static(path.join(__dirname, 'frontend/bin')));
+}
 
 app.use(function(req,res,next){
     req.db = db;
