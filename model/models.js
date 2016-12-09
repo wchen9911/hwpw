@@ -92,7 +92,7 @@ var Feedback = mongoose.model("Feedback", feedbackSchema);
 var goCardSchema = mongoose.Schema({
   name: String,
   ctiy: String,
-  tickets: [String],
+  ticket: String,
   attractions: [String],
   attractionsSale: [String]
 });
