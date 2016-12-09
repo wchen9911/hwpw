@@ -70,13 +70,54 @@ var feedbackSchema = mongoose.Schema({
   contact: String,
   content: String
 });
-var Feedback = mongoose.model("Feedback",feedbackSchema);
+var Feedback = mongoose.model("Feedback", feedbackSchema);
 
+
+/**
+ * City.
+ */
+ var citySchema = mongoose.Schema({
+  name: String,
+  ename: String,
+  state: String,
+  estate: String,
+  production: [String]
+ });
+ var City = mongoose.model("City", citySchema);
+
+
+ /**
+  * GoCard.
+  */
+var goCardSchema = mongoose.Schema({
+  name: String,
+  ctiy: String,
+  tickets: [String],
+  attractions: [String],
+  attractionsSale: [String]
+});
+var GoCard = mongoose.model("GoCard", goCardSchema);
+
+/**
+ * Attraction.
+ */ 
+var attractionSchema = mongoose.Schema({
+  name: String,
+  ename: String,
+  city: String,
+  pictures: [String],
+  info: String,
+  price: Number
+});
+var Attraction = mongoose.model("Attraction", attractionSchema);
 
 module.exports = {
-	Location: Location,
-	Performance: Performance,
-	Performer: Performer,
-	Ticket: Ticket,
-  Feedback: Feedback
+  Location: Location,
+  Performance: Performance,
+  Performer: Performer,
+  Ticket: Ticket,
+  Feedback: Feedback,
+  City: City,
+  GoCard: GoCard,
+  Attraction: Attraction
 };

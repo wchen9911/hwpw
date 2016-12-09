@@ -66,6 +66,10 @@ app.use('/performances', require('./routes/performances'));
 app.use('/performers', require('./routes/performers'));
 app.use('/promotions', require('./routes/promotions'));
 app.use('/tickets', require('./routes/tickets'));
+app.use('/cities', require('./routes/cities'));
+app.use('/gocards', require('./routes/gocards'));
+app.use('/attractions', require('./routes/attractions'));
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
