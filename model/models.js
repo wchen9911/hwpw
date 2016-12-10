@@ -81,9 +81,10 @@ var Feedback = mongoose.model("Feedback", feedbackSchema);
   ename: String,
   state: String,
   estate: String,
+  thumbnail: String,
   production: [String]
  });
- var City = mongoose.model("City", citySchema);
+ var City = mongoose.model("City", citySchema, 'cities');
 
 
  /**
