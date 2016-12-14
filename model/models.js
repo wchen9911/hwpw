@@ -51,7 +51,7 @@ var Performance = mongoose.model("performance", performanceSchema);
  */ 
 var ticketSchema = mongoose.Schema({
   name: String,
-  type: Number,
+  type: Number, // determine the performance's meaning, 1: NBA, 2: GoCard
   performance: String,
   level: String,
   section: String,
@@ -93,11 +93,11 @@ var Feedback = mongoose.model("Feedback", feedbackSchema);
 var goCardSchema = mongoose.Schema({
   name: String,
   ctiy: String,
-  ticket: String,
+  intro: String,
   attractions: [String],
   attractionsSale: [String]
 });
-var GoCard = mongoose.model("GoCard", goCardSchema);
+var GoCard = mongoose.model('GoCard', goCardSchema, 'gocards');
 
 /**
  * Attraction.
@@ -107,7 +107,7 @@ var attractionSchema = mongoose.Schema({
   ename: String,
   city: String,
   pictures: [String],
-  info: String,
+  intro: String,
   price: Number
 });
 var Attraction = mongoose.model("Attraction", attractionSchema);

@@ -13,7 +13,8 @@ router.get('/gocard/:gocard', function(req, res, next) {
     attractions: [],
     attractionsSale: []
   };
-  GoCard.find({_id: gocard}, function(card) {
+  GoCard.findOne({_id: gocard}, function(err, card) {
+    if (err) return console.error(err);
     // Get all attractions.
     var promises = [];
     card.attractions && card.attractions.forEach(function(attraction) {
