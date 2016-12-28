@@ -8,7 +8,7 @@ var Performer = models.Performer;
 // Gets all performers
 router.get('/group/:group', function(req, res, next) {
   var group = req.params.group;
-  Performer.find({group: group}, function(err, performers) {
+  Performer.find({group: group}).sort('-rank').exec(function(err, performers) {
     if (err) return console.error(err);
     res.json(performers);
   });

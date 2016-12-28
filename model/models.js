@@ -110,7 +110,19 @@ var attractionSchema = mongoose.Schema({
   intro: String,
   price: Number
 });
-var Attraction = mongoose.model("Attraction", attractionSchema);
+var Attraction = mongoose.model('Attraction', attractionSchema);
+
+/**
+ * Promotion.
+ * 由最终价格或者折扣计算出结算价格。二者二选一。
+ */
+ var PromotionSchema = mongoose.Schema({
+  name: String,
+  remark: String,
+  price: Number,  //最终价格
+  discount: Number //折扣
+ });
+ var Promotion = mongoose.model('Promotion', PromotionSchema);
 
 module.exports = {
   Location: Location,
@@ -120,5 +132,6 @@ module.exports = {
   Feedback: Feedback,
   City: City,
   GoCard: GoCard,
-  Attraction: Attraction
+  Attraction: Attraction,
+  Promotion: Promotion
 };

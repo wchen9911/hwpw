@@ -36,4 +36,12 @@ router.get('/gocard/:gocard', function(req, res, next) {
   });
 });
 
+router.get('/:attractionID', function(req, res, next) {
+  var attractionID = req.params.attractionID;
+  Attraction.findOne({_id: attractionID}, function(err, doc) {
+    if (err) return console.error(err);
+    res.json(doc);
+  });
+});
+
 module.exports = router;

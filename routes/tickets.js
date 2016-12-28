@@ -4,6 +4,7 @@ var models = require('../model/models')
 var router = express.Router();
 var Ticket = models.Ticket;
 var Performance = models.Performance;
+var Promotion = models.Promotion;
 
 
 // Gets all tickets
@@ -42,7 +43,20 @@ router.get('/performance/:performanceId', function(req, res, next) {
   var performanceId = req.params.performanceId;
   Ticket.find({performance: performanceId}, function(err, tickets) {
     if (err) return console.error(err);
-    res.json(tickets);
+    tickets = JSON.parse(JSON.stringify(tickets));
+    var promises = [];
+    tickets.forEach(function(ticket) {
+      ticket.promotions && ticket.promotions.forEach(function(promotion, index) {
+        var p = Promotion.findOne({_id: promotion},  function(err, promotion) {
+          if (err) return console.error(err);
+          ticket.promotions[index] = promotion;
+        });
+        promises.push(p);
+      });
+    });
+    Promise.all(promises).then(function() {
+      res.json(tickets);
+    });
   });
 });
 
