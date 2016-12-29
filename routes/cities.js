@@ -8,7 +8,7 @@ var City = models.City;
 router.get('/', function(req, res, next) {
   var query = req.query;
   var productions = (query.production || '').split(',');
-  City.find({production: productions}, function(err, cities) {
+  City.find({production: productions}).sort('-rank').exec(function(err, cities) {
     if (err) return console.error(err);
     res.json(cities);
   });
