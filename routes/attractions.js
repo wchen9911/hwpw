@@ -17,13 +17,13 @@ router.get('/gocard/:gocard', function(req, res, next) {
     if (err) return console.error(err);
     // Get all attractions.
     var promises = [];
-    card.attractions && card.attractions.forEach(function(attraction) {
+    card && card.attractions && card.attractions.forEach(function(attraction) {
       var p = Attraction.findOne({_id: attraction}, function(err, attraction) {
         result.attractions.push(attraction);
       });
       promises.push(p);
     });
-    card.attractionsSale && card.attractionsSale.forEach(function(attraction) {
+    card && card.attractionsSale && card.attractionsSale.forEach(function(attraction) {
       var p = Attraction.findOne({_id: attraction}, function(err, attraction) {
         result.attractionsSale.push(attraction);
       });
